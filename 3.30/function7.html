@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //使用先于声明
+    function fun1() {
+        console.log(a)
+    }
+
+    var a=111
+    function fun2()
+    {
+    var a=111
+        fun1()
+    }
+    fun2()
+</script>
+</body>
+</html>
