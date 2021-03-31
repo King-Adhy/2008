@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //    console.log(this)
+    //      alert("张珂")
+    //    console.log(this==window) //true
+
+
+    //       确定是那个数据类型
+        function Person() {
+
+        }
+        function Animal() {
+
+        }
+      var  obj1 = new Person()
+      var obj2 = new Animal()
+    console.log(obj1 instanceof Person) //true
+    console.log(obj2 instanceof Person) //false
+    console.log(obj2 instanceof Animal) //true
+</script>
+</body>
+</html>

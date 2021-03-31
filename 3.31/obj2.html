@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Person() {
+
+    }
+    Person.prototype.name="name"
+    Person.prototype.age=0
+    function Asian() {
+        
+    }
+
+
+    function China() {
+        
+    }
+    Asian.prototype = new Person()
+    Asian.prototype.location="亚洲"
+    China.prototype = new Asian()
+    China.prototype.color = "黄色"
+
+
+//    console.log(Asian.prototype)
+
+    var p1=new Asian()
+    var p2 = new China()
+    console.log(p2.color)
+    console.log(p2.location)
+    console.log(p2.name)
+    console.log(p2.age)
+//    console.log(p1)
+//    console.log(p1.name)
+//    console.log(p1.age)
+    //实例化
+//    var p1 = new Asian()
+//    console.log(p1)
+</script>
+</body>
+</html>
