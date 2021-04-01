@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+        input{
+            width: 50px;
+            height: 40px;
+            background-color: green;
+            margin-bottom: 10px;
+            border:0;
+        }
+        input,
+        button{
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="AAA">
+<input type="button" value="BBB">
+<input type="button" value="CCC">
+<input type="button" value="DDD">
+<script>
+window.onload=function () {
+  var ulli = document.querySelectorAll("input");
+  var length=ulli.length;
+  for(var i=0;i<length;i++){
+      ulli[i].index=i
+      ulli[i].onclick=function () {
+        alert(this.index)
+      }
+  }
+}
+</script>
+</body>
+</html>
