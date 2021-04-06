@@ -2,9 +2,57 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    //定义一个人类 Person1
+    //面向对象、
+    class Person1{
+//        定义属性
+        static name = "Biejing"
+
+        //构造方法 constructor  实例化时自动调用  完成一些初始化任务
+        constructor(name,age,sex){
+            this.name=name
+            this.age=age
+            this.sex=sex
+        }
+
+        //定义一个人
+        say(){
+            console.log(this.name + "正在说话")
+        }
+
+        static cry(){
+            console.log("正在哭")
+        }
+    }
+
+    //声明一个子类 Asian 继承Person类
+    class Asian extends Person1 {
+        //构造函数 继承带关键字 super
+        constructor(name,age,sex){
+            super(name,age,sex)
+        }
+        //自定义方法
+        cry(){
+            console.log(this.name+"正在哭")
+        }
+    }
+
+    //定义一个类
+    class Chinese extends Asian{
+
+    }
+
+    let p1=new Chinese("老子",100,"M")
+    console.log(p1)
+    p1.say()
+//   let p1 = new Asian("老子",0,"M")
+//    console.log(p1)
+//    p1.say()
+//    p1.cry()
+</script>
 </body>
 </html>

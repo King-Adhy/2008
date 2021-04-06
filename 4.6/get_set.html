@@ -2,9 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    //声明一个变量
+    const obj1 = {
+        name:"diaohaoyi",
+        age:11,
+
+        //get方法 关键字
+        get age(){
+            console.log(11111)
+        },
+        //    v新值
+        set age(v){
+            console.log("新设置的值为:",v)
+        }
+    }
+
+    obj1.age        //读操作 触发get
+    obj1.age = 22   //写操作 触发set
+</script>
 </body>
 </html>
