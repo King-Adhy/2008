@@ -2,9 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    //字面量定义
+    const obj1 = {
+        name:"diaohaoyi",
+        age:19
+    }
+//    console.log(obj1.name)
+
+    //定义访问器属性
+    Object.defineProperty(obj1,"email",{
+        get(){
+            return "访问了name属性" //拦截
+        },
+        //定义修改器属性
+        set(v){
+            //当前这个name的新值
+            return  v
+        }
+    })
+    console.log(obj1)
+</script>
 </body>
 </html>

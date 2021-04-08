@@ -2,9 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    const obj1 = {
+        name:"diaohoayi",
+        age:19
+    }
+//                拦截对象 修改默认
+    const p1 = new Proxy(obj1,{
+        //拦截get
+        get(target,property){
+//            console.log(target)
+//            console.log(property)
+            //判断访问的属性是否在  对象中
+            //属性property是否在target中
+           if(property in target){
+            console.log(`${property}属性存在`)
+           }else{
+            console.log(`${property}属性不存在`)
+           }
+        }
+    })
+    //访问name属性
+    p1.name
+    p1.sex
+    p1.age
+
+</script>
 </body>
 </html>

@@ -2,9 +2,74 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let arr1 = [11,22,33,44,55]
+    //查看数组的方法
+    console.log(Array.prototype)
+    console.log(Set.prototype)
+    console.log(Map.prototype)
+
+//    实例的迭代器
+    let it = arr1[Symbol.iterator]()
+    console.log(it.next());//11
+    console.log(it.next());//22
+    console.log(it.next());//33
+    console.log(it.next());//44
+    console.log(it.next());//55
+    console.log(it.next());//true迭代器到头了
+
+    arr1.forEach(function (v,k) {
+        //k 下标   v 迭代的元素
+        console.log(k,v)
+    })
+
+
+//    迭代
+    for(v of arr1){
+        console.log(v)
+    }
+
+        //数组
+    let s1 = new Set(arr1)
+    console.log(s1)//set类型的数组
+
+    for(v of s1){
+        console.log(v)
+    }
+
+
+    //数组形式
+    let arr2 = ["aa","bb","cc","dd","ee"]
+    let s2 = new Set(arr2)
+    console.log(s2)
+    for(v of s2){
+        console.log(v)
+    }
+
+
+//    定义一个map
+    const obj3 = {
+        name:"liuhuilin",
+        age:19
+    }
+    const obj4 = {
+        name:"wangyanhui",
+        age:19
+    }
+    let m1 = new Map()
+    //map里面的k可以是复杂数据类型 对象
+    //set方法添加元素
+    m1.set(obj3,"刘慧琳");
+    m1.set(obj4,"王艳慧");
+    console.log(m1)
+    console.log(1111111111)
+    //迭代
+    for(v1 of m1){
+        console.log(v1)
+    }
+</script>
 </body>
 </html>
