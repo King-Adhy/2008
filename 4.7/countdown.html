@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        h3{
+            color: red;
+        }
+        #countDown span font{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="countDown">
+    <h3>距离五一劳动节还有：</h3>
+    <span id="t_d"> <font>24</font>天</span>
+    <span id="t_h"> <font>5</font>时</span>
+    <span id="t_m"><font>38</font>分</span>
+    <span id="t_s"><font>51</font>秒</span>
+</div>
+<script type="text/javascript">
+    function countDown() {
+        var eTime = new Date('2021/5/1 16:26:00'); //截止时间
+        var nTime = new Date();
+        var t = eTime.getTime() - nTime.getTime();
+        var d = Math.floor(t / 1000 / 60 / 60 / 24);
+        var h = Math.floor(t / 1000 / 60 / 60 % 24);
+        var m = Math.floor(t / 1000 / 60 % 60);
+        var s = Math.floor(t / 1000 % 60);
+        document.getElementById("t_d").innerHTML = d + "天";
+        document.getElementById("t_h").innerHTML = h + "时";
+        document.getElementById("t_m").innerHTML = m + "分";
+        document.getElementById("t_s").innerHTML = s + "秒";
+        if (t < 0) {
+            document.getElementById('countDown').innerHTML = '倒计时结束！';
+            clearInterval(countD);
+        };
+    }
+    var countD = setInterval(countDown, 1000);
+</script>
+</body>
+</html>

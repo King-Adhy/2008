@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .btn{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<input type="checkbox" class="box">A
+<input type="checkbox" class="box">B
+<input type="checkbox" class="box">C
+<input type="checkbox" class="box">D
+<div class="btn" id="allChecked">全选</div>
+<div class="btn" id="noChecked">取消全选</div>
+</body>
+</html>
+<script>
+    window.onload=function () {
+        //全选
+         var allChecked = document.querySelector("#allChecked")
+        allChecked.onclick=function () {
+        var box =document.querySelectorAll("input[type='checkbox']")
+            for(var i=0;i<box.length;i++){
+            box[i].checked=true
+            }
+        }
+        //取消全选
+        var noChecked = document.querySelector("#noChecked")
+        noChecked.onclick=function () {
+        var box =  document.querySelectorAll("input[type='checkbox']")
+            for(var i=0;i<box.length;i++){
+            box[i].checked=false
+            }
+        }
+    }
+</script>

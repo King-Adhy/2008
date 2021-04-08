@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    1、通过原型给数组添加一个去掉数组中重复的元素的方法
+//let arr1 = [11,33,44,11,66,77,44];
+//    function uniq(arr1) {
+//        return Array.from(new Set(arr1))
+//    }
+//    console.log(uniq(arr1))
+
+Array.prototype.unique = function() {
+    let res = [this[0]];
+    for (let i = 1; i < this.length; i++) {
+        let repeat = false;
+        for (let j = 0; j < res.length; j++) {
+            if (this[i] == res[j]) {
+                repeat = true;
+                break;
+            }
+        }
+        if (!repeat) {
+            res.push(this[i]);
+        }
+    }
+    return res;
+}
+var arrNum2 = [11, 33, 44, 11, 66, 77, 44, 88];
+console.log(arrNum2.unique());
+
+
+
+
+//给字符串的原型添加一个反转字符串的方法
+
+let str = "abcd"
+    function reverse(str) {
+        return Array.from(new Set(str))
+    }
+    console.log(reverse(str))
+
+</script>
+</body>
+</html>
