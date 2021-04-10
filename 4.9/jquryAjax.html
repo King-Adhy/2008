@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="./jquery-3.2.1.min.js"></script>
+<script>
+    //第一次
+    $.ajax({
+        url :"http://vue.api.comcto.com/api/password1.php", //url地址
+        Type :"get", //方式为get
+//        async:false, //强制 同步
+//        dataType = "json"  //为json
+        success:function (data) {   //d为请求成功后 处理的函数
+            console.log("第一位密码",data)  //返回的数字
+
+
+            //第二次
+            $.ajax({
+                url :"http://vue.api.comcto.com/api/password2.php", //url地址
+                Type :"get", //方式为get
+//        async:false, //强制 同步
+//        dataType = "json"  //为json
+                success:function (data) {   //d为请求成功后 处理的函数
+                    console.log("第二位密码",data)  //返回的数字
+
+
+                    //第三次
+                    $.ajax({
+                        url :"http://vue.api.comcto.com/api/password3.php", //url地址
+                        Type :"get", //方式为get
+//        async:false, //强制 同步
+//        dataType = "json"  //为json
+                        success:function (data) {   //d为请求成功后 处理的函数
+                            console.log("第三位密码",data)  //返回的数字
+
+
+                            //第四次
+                            $.ajax({
+                                url :"http://vue.api.comcto.com/api/password4.php", //url地址
+                                Type :"get", //方式为get
+//        async:false, //强制 同步
+//        dataType = "json"  //为json
+                                success:function (data) {   //d为请求成功后 处理的函数
+                                    console.log("第四位密码",data)  //返回的数字
+                                }
+                            })
+                        }
+                    })
+                }
+            })
+        }
+        })
+</script>
+</body>
+</html>

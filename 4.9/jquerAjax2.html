@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="./jquery-3.2.1.min.js"></script>
+<script>
+    //使用Promise
+     //构造函数         函数 函数名
+    let pass =[]
+    const p = new Promise(function (resolve,reject) {
+        //第一次
+        $.ajax({
+            url :"http://vue.api.comcto.com/api/password1.php", //url地址
+            Type :"get", //方式为get
+//        async:false, //强制 同步
+//        dataType = "json"  //为json
+            success:function (data) {   //d为请求成功后 处理的函数
+                console.log("第一位密码", data)  //返回的数字
+                resolve(data)  //异步操作成功时调用  resolve 函数
+            }
+        })
+    }).then(function (d) {
+        console.log("接受到上一步 Resolve传递 的数据")
+        console.log(d)
+        //第二次
+        $.ajax({
+            url :"http://vue.api.comcto.com/api/password2.php", //url地址
+            Type :"get", //方式为get
+//        async:false, //强制 同步
+//        dataType = "json"  //为json
+            success:function (data) {   //d为请求成功后 处理的函数
+                console.log("第二位密码", data)  //返回的数字
+//                resolve(data)  //异步操作成功时调用  resolve 函数
+            }
+        })
+
+    }).then(function () {
+        //第三次
+        $.ajax({
+            url :"http://vue.api.comcto.com/api/password3.php", //url地址
+            Type :"get", //方式为get
+//        async:false, //强制 同步
+//        dataType = "json"  //为json
+            success:function (data) {   //d为请求成功后 处理的函数
+                console.log("第三位密码", data)  //返回的数字
+//                resolve(data)  //异步操作成功时调用  resolve 函数
+            }
+        })
+    })
+</script>
+</body>
+</html>

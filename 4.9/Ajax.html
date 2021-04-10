@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //实例化
+    let xhr = new XMLHttpRequest()
+        //监听模式
+    xhr.onreadystatechange=function () {
+        if(xhr.readyState==4 && xhr.status==200){
+            //接受服务器得响应状态
+            //处理服务器的数据
+            xhr.responseText();
+        }
+    }
+    //打开链接
+//  xhr.open("get","http://vue.api.comcto.com/api/password1.php")   //9
+//   xhr.open("get","http://vue.api.comcto.com/api/password2.php") //5
+//   xhr.open("get","http://vue.api.comcto.com/api/password3.php") //0
+//   xhr.open("get","http://vue.api.comcto.com/api/password4.php") //7
+    //发送请求
+    xhr.send()
+</script>
+</body>
+</html>
